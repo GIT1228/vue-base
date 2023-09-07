@@ -4,7 +4,7 @@
       <el-menu default-active="1" class="el-menu-vertical-demo" :collapse-transition="false" :collapse="collapse">
         <el-menu-item v-for="(item, index) in $store.state.siderList" :key="index" @click="click(item)">
           <i class="el-icon-s-order"></i>
-          <span slot="title">{{ item.title }}</span>
+          <span slot="title">{{ item.label }}</span>
         </el-menu-item>
       </el-menu>
       <span class="showCollapse" @click="handleShowCollapse">

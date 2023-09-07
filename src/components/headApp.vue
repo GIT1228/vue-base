@@ -37,9 +37,9 @@ export default {
       return rules.map((item, index) => ({
         siderList: item.children,
         index: index,
-        title: item.title,
+        title: item.label,
         path: item.path,
-        label: item.title,
+        label: item.label,
       }))
     }
   },
@@ -49,9 +49,9 @@ export default {
     handleClick(e) {
       this.$router.push(e.path)
       this.$store.commit('changeSiderMenuList', e.siderList.map(item => ({
-        title: item.title,
+        title: item.label,
         path: item.path,
-        label: item.title,
+        label: item.label,
       })))
       console.log(e)
     },

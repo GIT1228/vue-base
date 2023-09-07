@@ -12,7 +12,7 @@ const routes = [
         redirect: { name: 'pageOne' },
     },
     {
-        path:'/login',
+        path: '/login',
         component: loginApp
     },
     ...rules,
@@ -27,9 +27,9 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    if(to.path==='/login'){
+    if (to.path === '/login') {
         next()
-    }else{
+    } else {
         if (localStorage.getItem('token')) {
             if (to.matched[0].path === '*') {
                 Message.error('未找到正确路径')
@@ -41,6 +41,6 @@ router.beforeEach((to, from, next) => {
             next('/login')
         }
     }
-    
+
 })
 export default router
