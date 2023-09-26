@@ -149,7 +149,6 @@ export default {
                             Message.success('登录成功')
                             this.$router.push('/')
                             this.$store.commit('changeLogin', true)
-                            console.log(res.data)
                             this.$store.commit('changeUserInfo', res.data)
                         }
                     })

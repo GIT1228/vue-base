@@ -7,6 +7,7 @@ import router from './router'
 import './/style/index.css'
 import Particles from "vue2-particles";
 import "../src/api/axios.config.js"
+import '../src/qiankun/index'
 Vue.use(ElementUI);
 Vue.use(Particles);
 Vue.config.devtools = true

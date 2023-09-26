@@ -11,7 +11,7 @@ export default {
     children: [
         {
             path: 'index',
-            name: 'userMgn',
+            name: 'userMgnPage',
             component: userMgnPage,
             label: '用户管理'
         },

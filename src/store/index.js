@@ -5,9 +5,10 @@ import createPersistedState from "vuex-persistedstate";
 import { Message } from 'element-ui'
 const state = {
     showRouterview: false,
-    isLogin:true,
-    userInfo:{},
-    siderList:[
+    sierbarIsCollapse: false,
+    isLogin: true,
+    userInfo: {},
+    siderList: [
         {
             path: 'pageOne',
             label: 'pageOne',
@@ -33,14 +34,17 @@ const actions = {
 const mutations = {
     changeLogin(state, value) {
         state.isLogin = value
-        let text = value?'登录':'退出'
+        let text = value ? '登录' : '退出'
         Message.success(`${text}成功并修改了login的值`)
     },
     changeUserInfo(state, value) {
         state.userInfo = value
     },
-    changeSiderMenuList(state,value) {
+    changeSiderMenuList(state, value) {
         state.siderList = value
+    },
+    changeCollapse(state, value) {
+        state.sierbarIsCollapse = value
     }
 }
 Vue.use(Vuex)
@@ -49,6 +53,6 @@ export default new Vuex.Store({
     mutations,
     actions,
     plugins: [createPersistedState({
-        paths: ['siderList']
+        paths: ['siderList', 'sierbarIsCollapse']
     })]
 })

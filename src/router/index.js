@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import rules from "./requireRules"
-import NotFound from '../components/NotFound.vue'
+// import NotFound from '../components/NotFound.vue'
 import loginApp from '../components/loginApp.vue'
+import microContent from '../components/microContent.vue'
 import { Message } from 'element-ui'
 Vue.use(VueRouter)
 
@@ -15,14 +16,19 @@ const routes = [
         path: '/login',
         component: loginApp
     },
-    ...rules,
     {
-        path: '*',
-        component: NotFound
-    }
+        path: '/micro/*',
+        component: microContent
+    },
+    ...rules,
+    // {
+    //     path: '*',
+    //     component: NotFound
+    // }
 ]
 
 const router = new VueRouter({
+    mode: 'history',
     routes
 })
 

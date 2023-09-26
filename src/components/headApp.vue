@@ -53,7 +53,6 @@ export default {
         path: item.path,
         label: item.label,
       })))
-      console.log(e)
     },
     handleLogin(e) {
       switch (e) {
